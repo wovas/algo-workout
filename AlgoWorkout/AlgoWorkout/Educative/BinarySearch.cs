@@ -14,6 +14,11 @@ namespace AlgoWorkout.Educative
             return BoundaryInternal(arr, (a, i) => a[i] >= target);
         }
 
+        public static int FirstOccurence(int[] arr, int target)
+        {
+            return BoundaryInternal(arr, (a, i) => a[i] == target);
+        }
+
         private static int BoundaryInternal<T>(T[] arr, Func<T[], int, bool> predicate) 
         {
             int left = 0;

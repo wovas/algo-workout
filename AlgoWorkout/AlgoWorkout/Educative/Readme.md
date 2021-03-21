@@ -3,3 +3,4 @@
 1. [Binary search](BinarySearch.cs)
 2. [Boolean boundaries](BinarySearch.cs)
 3. [Not smaller then target](BinarySearch.cs)
+4. [Find first occurence of element](BinarySearch.cs)

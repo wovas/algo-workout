@@ -54,5 +54,20 @@ namespace AlgoWorkout.Tests.Educative
             var arr = new int[] { 1, 3, 3, 5, 8, 8, 10};
             Assert.AreEqual(1, BinarySearch.NotSmallerThenLargest(arr, 2));
         }
+
+        [TestMethod]
+        public void FindFirstOccurence()
+        {
+            var arr = new int[] { 1, 3, 3, 3, 3, 6, 10, 10, 10, 100 };
+            Assert.AreEqual(1, BinarySearch.FirstOccurence(arr, 3));
+            Assert.AreEqual(6, BinarySearch.FirstOccurence(arr, 10));
+        }
+
+        [TestMethod]
+        public void FindFirstOccurenceNotFound()
+        {
+            var arr = new int[] { 1, 3, 3, 3, 3, 6, 10, 10, 10, 100 };
+            Assert.AreEqual(-1, BinarySearch.FirstOccurence(arr, 2));
+        }
     }
 }
