@@ -32,6 +32,13 @@ namespace AlgoWorkout.Educative
             return BoundaryInternal(left, right, (i) => i >= number / i);
         }
 
+        public static int RotatedPivotPoint(int[] arr)
+        {
+            int left = 0;
+            int right = arr.Length - 1;
+            return BoundaryInternal(left, right, (i) => arr[i] <= arr[arr.Length - 1]);
+        }
+
         private static int BoundaryInternal(int left, int right, Func<int, bool> predicate) 
         {
             int boundaryIndex = -1;

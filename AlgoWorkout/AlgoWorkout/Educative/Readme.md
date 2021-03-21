@@ -5,3 +5,4 @@
 3. [Not smaller then target](BinarySearch.cs)
 4. [Find first occurence of element](BinarySearch.cs)
 5. [Square root](BinarySearch.cs)
+6. [Rotated array pivot point](BinarySearch.cs)

@@ -80,5 +80,19 @@ namespace AlgoWorkout.Tests.Educative
             
             Assert.AreEqual(squareRoot, BinarySearch.Sqrt(n));
         }
+
+        [TestMethod]
+        public void RotatedArrayTest()
+        {
+            var arr = new int[] { 30, 40, 50, 10, 20 };
+            Assert.AreEqual(3, BinarySearch.RotatedPivotPoint(arr));
+        }
+
+        [TestMethod]
+        public void RotatedArrayTestSorted()
+        {
+            var arr = new int[] { 10, 20, 30, 40, 50 };
+            Assert.AreEqual(0, BinarySearch.RotatedPivotPoint(arr));
+        }
     }
 }
