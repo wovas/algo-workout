@@ -1,8 +1,20 @@
-﻿namespace AlgoWorkout.Educative
+﻿using System;
+
+namespace AlgoWorkout.Educative
 {
     public static class BinarySearch
     {
         public static int FindBoolBoundary(bool[] arr)
+        {
+            return BoundaryInternal<bool>(arr, (a, i) => a[i] == true);
+        }
+
+        public static int NotSmallerThenLargest(int[] arr, int target)
+        {
+            return BoundaryInternal(arr, (a, i) => a[i] >= target);
+        }
+
+        private static int BoundaryInternal<T>(T[] arr, Func<T[], int, bool> predicate) 
         {
             int left = 0;
             int right = arr.Length - 1;
@@ -10,7 +22,7 @@
             while (left <= right)
             {
                 var mid = (right - left) / 2 + left;
-                if (arr[mid] == true)
+                if (predicate(arr, mid))
                 {
                     boundaryIndex = mid;
                     right = mid - 1;

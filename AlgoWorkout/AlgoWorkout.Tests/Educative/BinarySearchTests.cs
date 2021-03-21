@@ -47,5 +47,12 @@ namespace AlgoWorkout.Tests.Educative
 
             Assert.AreEqual(0, BinarySearch.FindBoolBoundary(arr));
         }
+
+        [TestMethod]
+        public void NotSmallerThenTarget()
+        {
+            var arr = new int[] { 1, 3, 3, 5, 8, 8, 10};
+            Assert.AreEqual(1, BinarySearch.NotSmallerThenLargest(arr, 2));
+        }
     }
 }
