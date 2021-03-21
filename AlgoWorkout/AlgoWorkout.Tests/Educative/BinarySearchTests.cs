@@ -94,5 +94,26 @@ namespace AlgoWorkout.Tests.Educative
             var arr = new int[] { 10, 20, 30, 40, 50 };
             Assert.AreEqual(0, BinarySearch.RotatedPivotPoint(arr));
         }
+
+        [TestMethod]
+        public void PeakArray()
+        {
+            var arr = new int[] { 10, 20, 30, 40, 50, 35, 20 };
+            Assert.AreEqual(4, BinarySearch.PeakArray(arr));
+        }
+
+        [TestMethod]
+        public void PeakArrayShiftedRight()
+        {
+            var arr = new int[] { 10, 20, 30, 40, 50};
+            Assert.AreEqual(4, BinarySearch.PeakArray(arr));
+        }
+
+        [TestMethod]
+        public void PeakArrayShiftedLeft()
+        {
+            var arr = new int[] { 5, 4, 3, 2, 1 };
+            Assert.AreEqual(0, BinarySearch.PeakArray(arr));
+        }
     }
 }

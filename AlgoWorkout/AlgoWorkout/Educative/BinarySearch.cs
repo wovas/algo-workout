@@ -39,6 +39,13 @@ namespace AlgoWorkout.Educative
             return BoundaryInternal(left, right, (i) => arr[i] <= arr[arr.Length - 1]);
         }
 
+        public static int PeakArray(int[] arr)
+        {
+            int left = 0;
+            int right = arr.Length - 1;
+            return BoundaryInternal(left, right, (i) => i == arr.Length - 1 || arr[i] >= arr[i + 1]);
+        }
+
         private static int BoundaryInternal(int left, int right, Func<int, bool> predicate) 
         {
             int boundaryIndex = -1;
