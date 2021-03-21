@@ -1,8 +1,5 @@
 ﻿using AlgoWorkout.Educative;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AlgoWorkout.Tests.Educative
 {
@@ -25,6 +22,30 @@ namespace AlgoWorkout.Tests.Educative
             Assert.AreEqual(-1, BinarySearch.Search(arr, 2));
             Assert.AreEqual(-1, BinarySearch.Search(arr, 12));
             Assert.AreEqual(-1, BinarySearch.Search(arr, 16));
+        }
+
+        [TestMethod]
+        public void FindBoundaryNormal()
+        {
+            var arr = new bool[] { false, false, false, true, true };
+            
+            Assert.AreEqual(3, BinarySearch.FindBoolBoundary(arr));
+        }
+
+        [TestMethod]
+        public void FindBoundaryNotfound()
+        {
+            var arr = new bool[] { false, false, false };
+
+            Assert.AreEqual(-1, BinarySearch.FindBoolBoundary(arr));
+        }
+
+        [TestMethod]
+        public void FindBoundaryAllTrue()
+        {
+            var arr = new bool[] { true, true, true };
+
+            Assert.AreEqual(0, BinarySearch.FindBoolBoundary(arr));
         }
     }
 }
