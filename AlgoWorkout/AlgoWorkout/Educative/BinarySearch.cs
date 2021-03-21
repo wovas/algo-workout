@@ -6,28 +6,39 @@ namespace AlgoWorkout.Educative
     {
         public static int FindBoolBoundary(bool[] arr)
         {
-            return BoundaryInternal<bool>(arr, (a, i) => a[i] == true);
+            int left = 0;
+            int right = arr.Length - 1;
+            return BoundaryInternal(left, right, (i) => arr[i] == true);
         }
 
         public static int NotSmallerThenLargest(int[] arr, int target)
         {
-            return BoundaryInternal(arr, (a, i) => a[i] >= target);
+            int left = 0;
+            int right = arr.Length - 1;
+            return BoundaryInternal(left, right, (i) => arr[i] >= target);
         }
 
         public static int FirstOccurence(int[] arr, int target)
         {
-            return BoundaryInternal(arr, (a, i) => a[i] == target);
-        }
-
-        private static int BoundaryInternal<T>(T[] arr, Func<T[], int, bool> predicate) 
-        {
             int left = 0;
             int right = arr.Length - 1;
+            return BoundaryInternal(left, right, (i) => arr[i] == target);
+        }
+
+        public static int Sqrt(int number)
+        {
+            int left = 1;
+            int right = number;
+            return BoundaryInternal(left, right, (i) => i >= number / i);
+        }
+
+        private static int BoundaryInternal(int left, int right, Func<int, bool> predicate) 
+        {
             int boundaryIndex = -1;
             while (left <= right)
             {
                 var mid = (right - left) / 2 + left;
-                if (predicate(arr, mid))
+                if (predicate(mid))
                 {
                     boundaryIndex = mid;
                     right = mid - 1;

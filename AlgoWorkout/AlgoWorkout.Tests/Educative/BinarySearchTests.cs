@@ -69,5 +69,16 @@ namespace AlgoWorkout.Tests.Educative
             var arr = new int[] { 1, 3, 3, 3, 3, 6, 10, 10, 10, 100 };
             Assert.AreEqual(-1, BinarySearch.FirstOccurence(arr, 2));
         }
+
+        [DataTestMethod]
+        [DataRow(9, 3)]
+        [DataRow(4, 2)]
+        [DataRow(25, 5)]
+        [DataRow(26, 5)]
+        public void SqrtTests(int n, int squareRoot)
+        {
+            
+            Assert.AreEqual(squareRoot, BinarySearch.Sqrt(n));
+        }
     }
 }
